@@ -1,7 +1,5 @@
-# Poverty-Analysis-GSEP-Data
-# PROJECT : YALE EGC-ISSER PANEL
-# PURPOSE: CLEAN UP THE CONSUMPTION SECTION AND CREATE A METRIC OF AGGREGATE CONSUMPTION EXPENDITURE
-# creating a composite file with expenditures from the education and health sections
+**PROJECT : YALE EGC-ISSER PANEL***************************************************************************************************
+**PURPOSE : CLEAN UP THE CONSUMPTION SECTION AND CREATE A METRIC OF AGGREGATE CONSUMPTION EXPENDITURE
 
 /*
 Structure of this do file 
@@ -13,12 +11,12 @@ Structure of this do file
 	Creating consumption datasets
 */	
 
-# *****************************************************
+************************************************************************************************************************************
 
-global datafolder "/Users/GSEP/Desktop/Wave 1"	
-global resultfolder "/Users/GSEP/Wave 1/Data results"
+global datafolder "/Users/Desktop/Wave 1"	
+global resultfolder "/Users/Desktop/Wave 1/Data results"
 
-# //program to keep only one aggregated observation per HH
+//program to keep only one aggregated observation per HH
 capture program drop keep_one
 program define keep_one
 	bys FPrimary `1': gen i_`1' = _n
@@ -40,6 +38,9 @@ foreach x of varlist `1' `2' `3' {
 	drop count_quantity_`x' temp
 }
 end
+
+************************************************************************************************************************************
+
 ******************************
 * APPENDING THE S11 DATASETS *
 ******************************
